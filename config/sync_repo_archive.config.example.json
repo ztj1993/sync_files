@@ -1,0 +1,23 @@
+[
+  {
+    "name": "dnspod-powershell",
+    "url": "https://github.com/ztj1993/dnspod-powershell",
+    "ref": "main",
+    "extract": true,
+    "extract_dir": "dnspod-powershell",
+    "archive_format": "zip"
+  },
+  {
+    "name": "scoop-lock",
+    "url": "https://gitee.com/zhangtianjie/scoop-lock",
+    "ref": "master",
+    "extract": false,
+    "filename": "scoop-lock.zip"
+  },
+  {
+    "name": "Scoop",
+    "url": "https://gitlab.com/ScoopInstaller/Scoop",
+    "ref": "master",
+    "extract": false
+  }
+]
