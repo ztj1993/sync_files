@@ -1,0 +1,12 @@
+[
+  {
+    "name": "VSCode README",
+    "url": "https://raw.githubusercontent.com/microsoft/vscode/main/README.md",
+    "filename": "./downloads/vscode-readme.md"
+  },
+  {
+    "name": "Git-osc README",
+    "url": "https://gitee.com/oschina/git-osc/raw/master/README.md",
+    "filename": "./downloads/gitee-readme.md"
+  }
+]
