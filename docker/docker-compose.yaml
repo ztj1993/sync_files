@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  cron:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: sync-files:latest
+    container_name: sync-files
+    network_mode: bridge
+    environment:
+      # 第一个定时任务：仓库同步
+      CRON_1_SCHEDULE: "0 * * * *"
+      CRON_1_COMMAND: "python3 sync_repo_archive.py -c config/sync_repo_archive.config.example.json"
+      CRON_1_LOGFILE: "/var/log/sync_repo_archive.log"
+
+      # 第二个定时任务：URL 文件同步
+      CRON_2_SCHEDULE: "0 * * * *"
+      CRON_2_COMMAND: "python3 sync_url_file.py -c config/sync_url_file.config.example.json"
+      CRON_2_LOGFILE: "/var/log/sync_url_file.log"
+    volumes:
+      - /tmp/sync-files-log:/var/log:rw
