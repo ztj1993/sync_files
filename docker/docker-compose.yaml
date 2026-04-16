@@ -9,6 +9,7 @@ services:
     container_name: sync-files
     network_mode: bridge
     environment:
+      TZ: "Asia/Shanghai"
       # 第一个定时任务：仓库同步
       CRON_1_SCHEDULE: "0 * * * *"
       CRON_1_COMMAND: "python3 sync_repo_archive.py -c config/sync_repo_archive.config.example.json"
@@ -20,3 +21,5 @@ services:
       CRON_2_LOGFILE: "/var/log/sync_url_file.log"
     volumes:
       - /tmp/sync-files-log:/var/log:rw
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
