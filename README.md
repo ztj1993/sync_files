@@ -8,8 +8,8 @@
 
 | 工具 | 功能 | 适用场景 |
 |------|------|----------|
-| [sync_url_file.py](#sync_url_filepy) | 同步远程 URL 文件到本地 | 同步配置文件、静态资源等 |
-| [sync_repo_archive.py](#sync_repo_archivepy) | 同步 Git 仓库 Archive 并自动解压 | 同步开源项目、依赖库源码等 |
+| [app/sync_url_file.py](#sync_url_filepy) | 同步远程 URL 文件到本地 | 同步配置文件、静态资源等 |
+| [app/sync_repo_archive.py](#sync_repo_archivepy) | 同步 Git 仓库 Archive 并自动解压 | 同步开源项目、依赖库源码等 |
 
 ---
 
@@ -23,13 +23,13 @@
 
 ```bash
 # 同步单个文件
-python sync_url_file.py -n "配置文件" -u https://example.com/config.json -o ./config.json
+python app/sync_url_file.py -n "配置文件" -u https://example.com/config.json -o ./config.json
 
 # 同步 GitHub raw 文件
-python sync_url_file.py -n "README" -u https://raw.githubusercontent.com/user/repo/main/README.md -o ./README.md
+python app/sync_url_file.py -n "README" -u https://raw.githubusercontent.com/user/repo/main/README.md -o ./README.md
 
 # 使用配置文件批量同步
-python sync_url_file.py -c config.json
+python app/sync_url_file.py -c config.json
 ```
 
 #### 配置文件方式
@@ -54,7 +54,7 @@ python sync_url_file.py -c config.json
 执行同步：
 
 ```bash
-python sync_url_file.py -c config.json
+python app/sync_url_file.py -c config.json
 ```
 
 ### 参数说明
@@ -93,19 +93,19 @@ python sync_url_file.py -c config.json
 
 ```bash
 # 同步单个仓库（默认分支）
-python sync_repo_archive.py -n "vscode" -u https://github.com/microsoft/vscode
+python app/sync_repo_archive.py -n "vscode" -u https://github.com/microsoft/vscode
 
 # 同步指定分支
-python sync_repo_archive.py -n "vscode" -u https://github.com/microsoft/vscode -r main
+python app/sync_repo_archive.py -n "vscode" -u https://github.com/microsoft/vscode -r main
 
 # 同步到指定解压路径
-python sync_repo_archive.py -n "vscode" -u https://github.com/microsoft/vscode -e ./repos/vscode
+python app/sync_repo_archive.py -n "vscode" -u https://github.com/microsoft/vscode -e ./repos/vscode
 
 # 同步 Gitee 仓库
-python sync_repo_archive.py -n "git-osc" -u https://gitee.com/oschina/git-osc
+python app/sync_repo_archive.py -n "git-osc" -u https://gitee.com/oschina/git-osc
 
 # 指定压缩格式
-python sync_repo_archive.py -n "repo" -u https://github.com/owner/repo -f zip
+python app/sync_repo_archive.py -n "repo" -u https://github.com/owner/repo -f zip
 ```
 
 #### 配置文件方式
@@ -141,7 +141,7 @@ python sync_repo_archive.py -n "repo" -u https://github.com/owner/repo -f zip
 执行同步：
 
 ```bash
-python sync_repo_archive.py -c config.json
+python app/sync_repo_archive.py -c config.json
 ```
 
 ### 参数说明

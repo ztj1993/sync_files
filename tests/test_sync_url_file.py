@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import importlib.util
 spec = importlib.util.spec_from_file_location(
     "sync_url_file",
-    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "sync_url_file.py")
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "app", "sync_url_file.py")
 )
 sync_url_file = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(sync_url_file)

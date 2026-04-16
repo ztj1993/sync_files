@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import importlib.util
 spec = importlib.util.spec_from_file_location(
     "sync_repo_archive",
-    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "sync_repo_archive.py")
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "app", "sync_repo_archive.py")
 )
 sync_repo_archive = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(sync_repo_archive)
